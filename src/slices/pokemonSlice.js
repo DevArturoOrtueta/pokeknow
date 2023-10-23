@@ -10,6 +10,7 @@ export const pokemonSlice = createSlice({
         height: 0,
         weight: 0,
         id: 0,
+        base_experience: 0,
         //Arrays
         abilities: [],
         forms: [],
@@ -32,7 +33,8 @@ export const pokemonSlice = createSlice({
                 location_area_encounters,
                 height, 
                 weight, 
-                id, 
+                id,
+                base_experience,
                 abilities, 
                 forms, 
                 game_indices,
@@ -45,9 +47,10 @@ export const pokemonSlice = createSlice({
 
             state.name = name;
             state.location_area_encounters = location_area_encounters;
-            state.height = height; //Necesario transformar de hectogramos a kilogramos o libras
-            state.weight = weight; //Necesario transformar de decimetros a centimetros o metros
+            state.height = (height * 0.1).toFixed(2); //Necesario transformar de hectogramos a kilogramos o libras
+            state.weight = (weight * 0.1).toFixed(2); //Necesario transformar de decimetros a centimetros o metros
             state.id = id;
+            state.base_experience = base_experience;
             state.abilities = abilities;
             state.forms = forms;
             state.game_indices = game_indices;

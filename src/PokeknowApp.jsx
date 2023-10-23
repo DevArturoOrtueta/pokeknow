@@ -1,10 +1,12 @@
 import React from 'react'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react'
 import { findPokemon } from './slices/pokemonSlice';
 
 export const PokeknowApp = () => {
   const dispatch = useDispatch();
+
+  const {name} = useSelector((state) => state.pokemon)
 
   useEffect(()=> {
     fetch('https://pokeapi.co/api/v2/pokemon/1/')
@@ -12,4 +14,8 @@ export const PokeknowApp = () => {
     .then((data)=> dispatch(findPokemon(data)))
     .catch((error)=> console.log(error))
   })
+
+  return <>
+    <h1>{name}</h1>
+  </>
 }
