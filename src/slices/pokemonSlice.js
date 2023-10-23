@@ -3,14 +3,22 @@ import { createSlice } from '@reduxjs/toolkit';
 export const pokemonSlice = createSlice({
     name: 'pokemon',
     initialState: {
+        //Strings
         name: '',
+        location_area_encounters: '',
+        //Int
         height: 0,
         weight: 0,
         id: 0,
+        //Arrays
         abilities: [],
         forms: [],
         game_indices: [],
-        held_items: []
+        held_items: [],
+        moves: [],
+        stats: [],
+        types: [],
+        
     },
     reducers: {
         findAllPokemons: () => {
@@ -21,6 +29,7 @@ export const pokemonSlice = createSlice({
         findPokemon: (state, action) => {
             const {
                 name,
+                location_area_encounters,
                 height, 
                 weight, 
                 id, 
@@ -28,9 +37,14 @@ export const pokemonSlice = createSlice({
                 forms, 
                 game_indices,
                 held_items,
+                moves,
+                stats,
+                types,
+                
             } = action.payload
 
             state.name = name;
+            state.location_area_encounters = location_area_encounters;
             state.height = height; //Necesario transformar de hectogramos a kilogramos o libras
             state.weight = weight; //Necesario transformar de decimetros a centimetros o metros
             state.id = id;
@@ -38,6 +52,10 @@ export const pokemonSlice = createSlice({
             state.forms = forms;
             state.game_indices = game_indices;
             state.held_items = held_items;
+            state.moves = moves;
+            state.stats = stats; 
+            state.types = types;
+            
         },
 
     }
