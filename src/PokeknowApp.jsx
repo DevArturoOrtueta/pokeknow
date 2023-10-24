@@ -2,6 +2,7 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react'
 import { findPokemon } from './slices/pokemonSlice';
+import { PokemonCard } from './components/PokemonCard';
 
 
 export const PokeknowApp = () => {
@@ -17,6 +18,6 @@ export const PokeknowApp = () => {
   }, [])
 
   return <>
-    <h1>{pokemon.name}</h1>
+    <PokemonCard {...pokemon}/>
   </>
 }
