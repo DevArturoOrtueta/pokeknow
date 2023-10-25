@@ -12,7 +12,7 @@ export const PokeknowApp = () => {
   const pokemon = useSelector((state) => state.pokemon)
 
   useEffect(()=> {
-    fetch('https://pokeapi.co/api/v2/pokemon/1/')
+    fetch('https://pokeapi.co/api/v2/pokemon/9/')
     .then((response)=> response.json())
     .then((data)=> dispatch(findPokemon(data)))
     .catch((error)=> console.log(error))

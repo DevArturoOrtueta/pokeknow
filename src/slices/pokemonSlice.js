@@ -6,6 +6,7 @@ export const pokemonSlice = createSlice({
         //Strings
         name: '',
         location_area_encounters: '',
+        sprites: {},
         //Int
         height: 0,
         weight: 0,
@@ -31,6 +32,7 @@ export const pokemonSlice = createSlice({
             const {
                 name,
                 location_area_encounters,
+                sprites,
                 height, 
                 weight, 
                 id,
@@ -47,6 +49,7 @@ export const pokemonSlice = createSlice({
 
             state.name = name;
             state.location_area_encounters = location_area_encounters;
+            state.sprites = sprites;
             state.height = (height * 0.1).toFixed(2); //Necesario transformar de hectogramos a kilogramos o libras
             state.weight = (weight * 0.1).toFixed(2); //Necesario transformar de decimetros a centimetros o metros
             state.id = id;
