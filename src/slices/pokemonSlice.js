@@ -23,11 +23,6 @@ export const pokemonSlice = createSlice({
         
     },
     reducers: {
-        findAllPokemons: () => {
-            //Este sera el reducer para almacenar todos los nombres y id de todos los pokemones para mostrarlos en pantalla
-        
-            //Despues de buscarlos, cuando el usuario le da click hara la busqueda con findPokemon y mostrara el pokemon.
-        },
         findPokemon: (state, action) => {
             const {
                 name,
