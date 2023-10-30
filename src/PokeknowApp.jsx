@@ -1,22 +1,15 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react'
-import { findPokemon } from './slices/pokemonSlice';
-import { PokemonCard } from './components/PokemonCard/PokemonCard';
-
+import {Button} from "@nextui-org/react";
+import { FindPokemon } from './helper/FindPokemon';
 
 
 export const PokeknowApp = () => {
-  const dispatch = useDispatch();
 
-  const pokemon = useSelector((state) => state.pokemon)
+  return <>
+      <Button color="primary" onClick={FindPokemon()}>
+        Button
+      </Button>
+  </> 
+  
 
-  useEffect(()=> {
-    fetch('https://pokeapi.co/api/v2/pokemon/9/')
-    .then((response)=> response.json())
-    .then((data)=> dispatch(findPokemon(data)))
-    .catch((error)=> console.log(error))
-  }, [])
-
-  return <PokemonCard {...pokemon}/>
 }

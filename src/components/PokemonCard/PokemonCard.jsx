@@ -17,9 +17,10 @@ export const PokemonCard = ({name, id, location_area_encounters, sprites, height
             />
           </CardBody>
           <CardFooter className="text-small justify-between">
-            <b>{capitalizeFirstLetter(name)}</b>
+            <b>{capitalizeFirstLetter(name) + " "}</b>
             <p className="text-default-500">{id}</p>
           </CardFooter>
         </Card>
     )
 }
+

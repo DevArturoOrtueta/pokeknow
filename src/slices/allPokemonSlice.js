@@ -5,6 +5,9 @@ export const allPokemonSlice = createSlice({
     initialState: {
         //Int
         count: 0,
+        //String
+        next: 'https://pokeapi.co/api/v2/pokemon/',
+        previous: '',
         //Arrays
         results: [] 
     },
@@ -12,11 +15,15 @@ export const allPokemonSlice = createSlice({
         findAllPokemon: (state, action) => {
             const {
                 count,
+                next, 
+                previous,
                 results
             } = action.payload
 
-            state.count = count,
-            state.results = results  
+            state.count = count;
+            state.next = next;
+            state.previous = previous;
+            state.results = results; 
         },
 
     }
