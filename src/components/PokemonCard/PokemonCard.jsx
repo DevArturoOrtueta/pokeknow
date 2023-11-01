@@ -6,7 +6,7 @@ import { capitalizeFirstLetter } from '../../helper/capitalizeLetter';
 export const PokemonCard = ({name, id, location_area_encounters, sprites, height, weight, base_experience, abilities, forms, game_indices, held_items, moves, stats, types}) => {
     return (
         <Card shadow="sm" key={id} isPressable onPress={() => console.log("item pressed")}>
-          <CardBody className="overflow-visible p-0">
+          <CardBody className="overflow-visible p-1">
             <Image
               shadow="sm"
               radius="lg"
