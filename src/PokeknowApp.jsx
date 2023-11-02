@@ -23,5 +23,4 @@ export const PokeknowApp = () => {
 
   return <PokemonCard {...pokemon}/>
   
-  
 }
